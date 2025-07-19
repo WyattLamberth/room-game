@@ -22,6 +22,7 @@ async fn main() {
         
         clear_background(BLACK);
         player.draw();
+        enemy.draw();
 
         // Optional: Show FPS and position info
         draw_text(&format!("FPS: {}", get_fps()), 10.0, 20.0, 20.0, WHITE);

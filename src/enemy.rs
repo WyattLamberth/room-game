@@ -12,6 +12,15 @@ pub struct Enemy {
 impl Enemy {
     pub fn new(x:f32, y:f32) -> Self {
         Self {
+            position: Vec2::new(x, y),
+            speed: 180.0, // Speed in pixels per second
+            radius: 15.0, // Radius of the Enemy circle
+            color: RED, // Color of the Enemy circle
+        }
+    }
+
+    pub fn new_random() -> Self {
+        Self {
             position: Vec2::new(rand::gen_range(0.0, 800.0), rand::gen_range(0.0, 600.0)), // Random initial position
             speed: 180.0, // Speed in pixels per second
             radius: 15.0, // Radius of the Enemy circle
