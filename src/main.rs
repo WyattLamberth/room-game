@@ -3,9 +3,9 @@ mod window;
 
 use macroquad::prelude::*;
 use player::Player;
+use window::window_conf;
 
-
-#[macroquad::main(window::window_conf)]
+#[macroquad::main(window_conf)]
 async fn main() {
     // Initialize player at screen center
     let mut player = Player::new(screen_width() / 2.0, screen_height() / 2.0);
