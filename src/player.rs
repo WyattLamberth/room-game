@@ -13,7 +13,7 @@ impl Player {
             position: Vec2::new(x, y),
             speed: 200.0, // Speed in pixels per second
             radius: 15.0, // Radius of the player circle
-            color: YELLOW, // Color of the player circle
+            color: BLUE, // Color of the player circle
         }
     }
 
@@ -59,14 +59,5 @@ impl Player {
         
         // Optional: draw a small dot at the center for precise positioning
         draw_circle(self.position.x, self.position.y, 2.0, WHITE);
-    }
-
-    // Getter methods for accessing private fields if needed
-    pub fn position(&self) -> Vec2 {
-        self.position
-    }
-
-    pub fn radius(&self) -> f32 {
-        self.radius
     }
 }

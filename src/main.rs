@@ -5,12 +5,29 @@ use player::Player;
 
 #[macroquad::main("room game")]
 async fn main() {
+    // Initialize player at screen center
+    let mut player = Player::new(screen_width() / 2.0, screen_height() / 2.0);
+
     loop {
+        let dt = get_frame_time();
+
+        // Update game state
+        player.update(dt);
+
+        // Render
         clear_background(BLACK);
-        draw_text("this is the room game", 20.0, 20.0, 20.0, DARKGRAY);
+        player.draw();
 
-        draw_circle(screen_width() - 30.0, screen_height() - 30.0, 15.0, YELLOW);
+        // Optional: Show FPS and position info
+        draw_text(&format!("FPS: {}", get_fps()), 10.0, 20.0, 20.0, WHITE);
+        draw_text(
+            &format!("Position: ({:.1}, {:.1})", player.position.x, player.position.y),
+            10.0,
+            40.0,
+            20.0,
+            WHITE,
+        );
 
-        next_frame().await
+        next_frame().await;
     }
 }
