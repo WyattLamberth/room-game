@@ -1,9 +1,11 @@
 mod player;
+mod window;
 
 use macroquad::prelude::*;
 use player::Player;
 
-#[macroquad::main("room game")]
+
+#[macroquad::main(window::window_conf)]
 async fn main() {
     // Initialize player at screen center
     let mut player = Player::new(screen_width() / 2.0, screen_height() / 2.0);
@@ -15,6 +17,7 @@ async fn main() {
         player.update(dt);
 
         // Render
+        
         clear_background(BLACK);
         player.draw();
 
