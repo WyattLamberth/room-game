@@ -1,9 +1,11 @@
 mod player;
 mod window;
+mod enemy;
 
 use macroquad::prelude::*;
 use player::Player;
 use window::window_conf;
+use enemy::Enemy;
 
 #[macroquad::main(window_conf)]
 async fn main() {
